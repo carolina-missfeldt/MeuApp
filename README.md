@@ -12,7 +12,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Api
 
-* Install json-server  `npm install -g json-server@0.13.0` .
+* Install [json-server](https://github.com/typicode/json-server)  `npm install -g json-server@0.13.0` .
 
 * Run `json-server --watch db.json` inside your project folder.
 
