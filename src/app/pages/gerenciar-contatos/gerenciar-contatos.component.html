@@ -1,24 +1,24 @@
 <h1 class="mat-display-1">Gerenciar Contatos</h1>
-<mat-spinner *ngIf="!listaDeCadastrados"></mat-spinner>
+<div *ngIf="!listaDeCadastrados" class="carregando">
+    <div class="mat-text">Carregando...</div>
+</div>
+<div *ngIf="listaDeCadastrados && listaDeCadastrados.lenght === 0" class="carregando">
+    <div class="mat-text">Não há dados para mostrar</div>
+</div>
 <div class="box-contatos">
     <mat-accordion>
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let cadastro of listaDeCadastrados">
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    {{cadastro?.nome}}
+                    <p><strong>#{{cadastro.id}}: </strong> {{cadastro?.nome}}</p>
                 </mat-panel-title>
-                <mat-panel-description>
-                    <button mat-button (click)="deletarItem(cadastro.id)">
-                        Excluir
-                    </button>
-                </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>
-                <strong>Email: </strong> {{cadastro?.email}}</p>
-            <p>
-                <strong>Telefone: </strong> {{cadastro?.telefone | formatoTelefone}}</p>
-            <p>
-                <strong>Mensagem:</strong> {{cadastro?.mensagem}}</p>
+            <button mat-raised-button color="primary" class="excluir" (click)="deletarItem(cadastro.id)">
+                    Excluir
+            </button>
+            <p><strong>Email: </strong> {{cadastro?.email}}</p>
+            <p><strong>Telefone: </strong> {{cadastro?.telefone | formatoTelefone}}</p>
+            <p><strong>Mensagem:</strong> {{cadastro?.mensagem}}</p>
         </mat-expansion-panel>
     </mat-accordion>
 </div>
