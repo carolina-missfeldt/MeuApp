@@ -13,5 +13,13 @@ $colorHeader: #fff;
     }
     .menu {
         float: right;
+        @media screen and (max-width: 700px) {
+            margin-top: -10px;
+        }
+    }
+    @media screen and (max-width: 700px) {
+        .display-2 {
+            font-size: 1em;
+        }
     }
 }

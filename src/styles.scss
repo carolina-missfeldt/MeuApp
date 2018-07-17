@@ -16,9 +16,17 @@ body {
     width: 80%;
     margin: 0 auto;
     padding: 1em 0.5em;
+    @media screen and (max-width: 700px) {
+        width: 100%;
+        padding: 1em;
+    }
 }
 
 .contain {
     width: 100%;
     padding: 1em;
+}
+
+.mat-display-1 {
+    margin-bottom: 0.5em;
 }
