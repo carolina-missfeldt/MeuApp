@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { TabelaService } from './tabela.service';
+import { GerenciarContatosService } from './gerenciar-contatos.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { AlertService } from '../../resources/alert.service';
-import { Cadastro } from '../../resources/class/cadastro';
+import { AlertService } from '../../resources/generic-services/alert.service';
+import { Contato } from '../../resources/class/contato';
 
 @Component({
   selector: 'app-tabela',
-  templateUrl: './tabela.component.html',
-  styleUrls: ['./tabela.component.scss']
+  templateUrl: './gerenciar-contatos.component.html',
+  styleUrls: ['./gerenciar-contatos.component.scss']
 })
-export class TabelaComponent implements OnInit {
+export class GerenciarContatosComponent implements OnInit {
 
-  public listaDeCadastrados: Array<Cadastro> = [];
+  public listaDeCadastrados: Array<Contato> = [];
   public displayedColumns: string[] = ['id', 'nome', 'email', 'telefone', 'mensagem', 'button'];
 
-  constructor(private tabelaService: TabelaService, private alert: AlertService) { }
+  constructor(private gContatos: GerenciarContatosService, private alert: AlertService) { }
 
   ngOnInit() {
     this.criarTabela();
@@ -22,11 +22,11 @@ export class TabelaComponent implements OnInit {
 
   public criarTabela() {
     this.listaDeCadastrados = undefined;
-    this.tabelaService.listTable()
-      .subscribe( success => {
-          this.listaDeCadastrados = success;
-       },
-       (err: HttpErrorResponse) => {
+    this.gContatos.listTable()
+      .subscribe(success => {
+        this.listaDeCadastrados = success;
+      },
+        (err: HttpErrorResponse) => {
           this.listaDeCadastrados = [];
           this.alert.openSnackBar(err.statusText, '');
         }
@@ -34,7 +34,7 @@ export class TabelaComponent implements OnInit {
   }
 
   public deletarItem(id: number) {
-    this.tabelaService.deleteItem(id)
+    this.gContatos.deleteItem(id)
       .subscribe(
         success => {
           this.criarTabela();

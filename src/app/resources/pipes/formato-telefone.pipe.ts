@@ -5,17 +5,18 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FormatoTelefonePipe implements PipeTransform {
 
-  transform(value: string, args?: any): any {
+  transform(value: string): any {
     try {
       while (value.indexOf(' ') !== -1) {
         value = value.replace(' ', '');
-        }
+      }
+      console.log(value);
       const telefone = value.length;
       if (telefone === 11) {
 
         const ddd = value.substr(0, 2);
         const pNumero = value.substr(2, 1);
-        const numero = value.substr(4);
+        const numero = value.substr(3);
         const celular = `(${ddd}) ${pNumero} ${numero}`;
         return celular;
       }
@@ -27,7 +28,7 @@ export class FormatoTelefonePipe implements PipeTransform {
       }
 
     } catch (err) {
-        return 'Númeor indisponível';
+      return 'Número indisponível';
     }
     return null;
   }

@@ -1,9 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { CadastroService } from './cadastro.service';
-import { Cadastro } from '../../../resources/class/cadastro';
-import { AlertService } from '../../../resources/alert.service';
+import { Contato } from '../../../resources/class/contato';
+import { AlertService } from '../../../resources/generic-services/alert.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,12 +14,12 @@ export class CadastroComponent implements OnInit {
 
   @Output() contatoCadastrado = new EventEmitter();
   public fContato: FormGroup;
-  public contato: Cadastro;
+  public contato: Contato;
 
   constructor(private cadastroService: CadastroService, private formbuilder: FormBuilder, private alert: AlertService) {
     this.buildForm();
 
-   }
+  }
 
   ngOnInit() {
     this.contato = undefined;
@@ -27,13 +27,13 @@ export class CadastroComponent implements OnInit {
 
   public buildForm() {
     this.fContato = this.formbuilder.group({
-      nome: ['', [Validators.required, Validators.minLength(2)] ],
-      email: ['', [ Validators.required, Validators.email]],
+      nome: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, Validators.email]],
       telefone: ['', [
         Validators.required,
         Validators.minLength(10),
         Validators.maxLength(15),
-        Validators.pattern('^(([1-9]*)|(([1-9]*)\.([0-9]*)))$')] ],
+        Validators.pattern('^(([1-9]*)|(([1-9]*)\.([0-9]*)))$')]],
       mensagem: ['', [Validators.required, Validators.minLength(5)]]
     });
   }

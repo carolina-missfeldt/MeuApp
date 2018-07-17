@@ -1,24 +1,24 @@
 <h1 class="mat-display-1">Contato</h1>
- <form class="contain" [formGroup]='fContato'>
-        <mat-form-field appearance="legacy">
-            <mat-label>Nome*</mat-label>
-            <input matInput placeholder="Fulano de Tal" formControlName='nome' name="nome" autocomplete="of">
-            <mat-error *ngIf="!nome?.valid">Formato inválido, tente novamente.</mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="legacy">
-            <mat-label>Email*</mat-label>
-            <input matInput placeholder="fulano@email.com.br" formControlName='email' name="email" type="email" autocomplete="of">
-            <mat-error *ngIf="!email?.valid">Formato inválido, tente novamente.</mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="legacy">
-            <mat-label>Telefone*</mat-label>
-            <input matInput placeholder="11 99999999" formControlName='telefone' name="telefone" autocomplete="of">
-            <mat-error *ngIf="!telefone?.valid">Formato inválido, tente novamente.</mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="legacy">
-            <mat-label>Mensagem*</mat-label>
-            <textarea matInput formControlName='mensagem' name="mensagem"></textarea>
-            <mat-error *ngIf="!mensagem?.valid">Formato inválido, tente novamente.</mat-error>
-        </mat-form-field>
-        <button mat-raised-button color="primary" type="submit" (click)="cadastrar(contato)" [disabled]='!fContato.valid'>Enviar</button>
+<form class="contain" [formGroup]='fContato'>
+    <mat-form-field appearance="legacy">
+        <mat-label>Nome*</mat-label>
+        <input matInput placeholder="Fulano de Tal" formControlName='nome' name="nome" autocomplete="of">
+        <mat-error *ngIf="!nome?.valid">Formato inválido, tente novamente.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>Email*</mat-label>
+        <input matInput placeholder="fulano@email.com.br" formControlName='email' name="email" type="email" autocomplete="of">
+        <mat-error *ngIf="!email?.valid">Formato inválido, tente novamente.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>Telefone*</mat-label>
+        <input matInput placeholder="11 99999999" formControlName='telefone' name="telefone" autocomplete="of">
+        <mat-error *ngIf="!telefone?.valid">Formato inválido, tente novamente.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>Mensagem*</mat-label>
+        <textarea matInput formControlName='mensagem' name="mensagem"></textarea>
+        <mat-error *ngIf="!mensagem?.valid">Formato inválido, tente novamente.</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" (click)="cadastrar(contato)" [disabled]='!fContato.valid'>Enviar</button>
 </form>

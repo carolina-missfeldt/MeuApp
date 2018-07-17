@@ -1,0 +1,24 @@
+<h1 class="mat-display-1">Gerenciar Contatos</h1>
+<mat-spinner *ngIf="!listaDeCadastrados"></mat-spinner>
+<div class="box-contatos">
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let cadastro of listaDeCadastrados">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{cadastro?.nome}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    <button mat-button (click)="deletarItem(cadastro.id)">
+                        Excluir
+                    </button>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>
+                <strong>Email: </strong> {{cadastro?.email}}</p>
+            <p>
+                <strong>Telefone: </strong> {{cadastro?.telefone | formatoTelefone}}</p>
+            <p>
+                <strong>Mensagem:</strong> {{cadastro?.mensagem}}</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

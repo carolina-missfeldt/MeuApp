@@ -1,11 +1,3 @@
 {
-  "cadastro": [
-    {
-      "nome": "teste2",
-      "email": "carolinamissfeldt@gmail.com.br",
-      "telefone": "11 39649862",
-      "mensagem": "Mussum Ipsum, cacilds vidis litro abertis. Per aumento de cachacis, eu reclamis. Diuretics paradis num copo é motivis de denguis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Quem manda na minha terra sou euzis!",
-      "id": 3
-    }
-  ]
+  "cadastro": []
 }

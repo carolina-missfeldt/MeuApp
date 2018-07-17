@@ -2,22 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
-import { Cadastro } from '../../resources/class/cadastro';
+import { Contato } from '../../resources/class/contato';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class TabelaService {
+export class GerenciarContatosService {
 
   constructor(private http: HttpClient) { }
 
-  public listTable(): Observable<Cadastro[]> {
-    return this.http.get<Cadastro[]>('http://localhost:3000/cadastro')
+  public listTable(): Observable<Contato[]> {
+    return this.http.get<Contato[]>('http://localhost:3000/cadastro')
     .pipe(
       map(res => res.map(
         item =>
-        Object.assign(new Cadastro(), item)
+        Object.assign(new Contato(), item)
       ))
     );
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Cadastro } from '../../../resources/class/cadastro';
+import { Contato } from '../../../resources/class/contato';
 
 @Component({
   selector: 'app-cadastrado',
@@ -7,7 +7,7 @@ import { Cadastro } from '../../../resources/class/cadastro';
   styleUrls: ['./cadastrado.component.scss']
 })
 export class CadastradoComponent implements OnInit {
-  @Input() contato: Cadastro;
+  @Input() contato: Contato;
   @Output() reset = new EventEmitter();
   constructor() { }
 

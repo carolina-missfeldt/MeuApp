@@ -10,16 +10,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-import { TabelaComponent } from './pages/tabela/tabela.component';
 import { CadastroComponent } from './pages/contato/cadastro/cadastro.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ContatoComponent } from './pages/contato/contato.component';
-
-import { TabelaService } from './pages/tabela/tabela.service';
-import { AlertService } from './resources/alert.service';
-import { CadastroService } from './pages/contato/cadastro/cadastro.service';
 import { CadastradoComponent } from './pages/contato/cadastrado/cadastrado.component';
-import { FormatoTelefonePipe } from './resources/formato-telefone.pipe';
+import { GerenciarContatosComponent } from './pages/gerenciar-contatos/gerenciar-contatos.component';
+
+import { FormatoTelefonePipe } from './resources/pipes/formato-telefone.pipe';
+
+import { AlertService } from './resources/generic-services/alert.service';
+import { CadastroService } from './pages/contato/cadastro/cadastro.service';
+import { GerenciarContatosService } from './pages/gerenciar-contatos/gerenciar-contatos.service';
 
 @NgModule({
   declarations: [
@@ -27,14 +28,15 @@ import { FormatoTelefonePipe } from './resources/formato-telefone.pipe';
     HomeComponent,
     HeaderComponent,
     CadastroComponent,
-    TabelaComponent,
+    GerenciarContatosComponent,
     MenuComponent,
     ContatoComponent,
     CadastradoComponent,
     FormatoTelefonePipe
   ],
   imports: [
-    BrowserModule,
+
+  BrowserModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
     AppRoutingModule,
@@ -44,7 +46,7 @@ import { FormatoTelefonePipe } from './resources/formato-telefone.pipe';
     AngularMaterialModule
   ],
   providers: [
-    TabelaService,
+    GerenciarContatosService,
     CadastroService,
     AlertService
   ],
