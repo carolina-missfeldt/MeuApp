@@ -1,0 +1,17 @@
+$bgHeader: #000;
+$colorHeader: #fff;
+
+.header {
+    width: 100%;
+    padding: 1em;
+    background-color: $bgHeader;
+    color: $colorHeader;
+
+    h1 {
+        display: inline-block;
+        margin: 0;
+    }
+    .menu {
+        float: right;
+    }
+}

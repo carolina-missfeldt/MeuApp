@@ -1,0 +1,54 @@
+<h1 class="title">Gerenciar Contatos</h1>
+<mat-spinner *ngIf="!listaDeCadastrados"></mat-spinner>
+<table *ngIf="listaDeCadastrados" mat-table [dataSource]="listaDeCadastrados" class="mat-elevation-z8 table">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef> Nome </th>
+          <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> <p class="td-msg">{{element.email}} </p></td>
+        </ng-container>
+        <ng-container matColumnDef="telefone">
+          <th mat-header-cell *matHeaderCellDef> Telefone </th>
+          <td mat-cell *matCellDef="let element"> {{element.telefone}} </td>
+        </ng-container>
+        <ng-container matColumnDef="mensagem">
+          <th mat-header-cell *matHeaderCellDef> Mensagem </th>
+          <td mat-cell *matCellDef="let element" class="td-msg"> {{element.mensagem}} </td>
+        </ng-container>
+        <ng-container matColumnDef="button">
+            <th mat-header-cell *matHeaderCellDef>Excluir</th>
+            <td mat-cell *matCellDef="let element">         
+                <button mat-button (click)="deletarItem(element.id)">
+                    <i class="material-icons">close</i>
+                  </button> 
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-accordion class="cadastrados-mobile">
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false"
+                        *ngFor="let cadastro of listaDeCadastrados">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{cadastro?.nome}}
+            </mat-panel-title>
+            <mat-panel-description>
+                    <button mat-button (click)="deletarItem(cadastro.id)">
+                            Excluir
+                          </button> 
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p><strong>Email: </strong> {{cadastro?.email}}</p>
+          <p><strong>Telefone: </strong> {{cadastro?.telefone}}</p>
+          <p><strong>Mensagem:</strong> {{cadastro?.mensagem}}</p>
+        </mat-expansion-panel>
+</mat-accordion>
+      

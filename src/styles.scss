@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+$font: 'Roboto Mono',monospace;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em 0.5em;
+}
+
+.contain {
+    width: 100%;
+    padding: 1em;
+}

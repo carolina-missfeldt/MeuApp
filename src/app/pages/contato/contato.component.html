@@ -1,0 +1,2 @@
+<app-cadastro *ngIf="!contato" (contatoCadastrado)="recebeContato($event)"></app-cadastro>
+<app-cadastrado *ngIf="contato" (reset)="recebeContato($event)" [contato]="contato"></app-cadastrado>

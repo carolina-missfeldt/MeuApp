@@ -1,0 +1,15 @@
+.table {
+    width: 100%;
+    margin-top: 1em;
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
+
+}
+.cadastrados-mobile {
+    display: none;
+    margin-top: 2em;
+    @media screen and (max-width: 700px) {
+         display: block;
+     }
+}

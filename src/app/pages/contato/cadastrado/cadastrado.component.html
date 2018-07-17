@@ -1,0 +1,20 @@
+<h1 class="title">Dados cadastrados</h1>
+<div class="contain">
+  <div>
+    <mat-list role="list">
+        <mat-list-item role="listitem">
+          <p class="subheading-2"><strong>Nome: </strong> {{contato?.nome}} </p>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <p class="subheading-2"><strong>Email: </strong> {{contato?.email}}</p>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+            <p class="subheading-2"><strong>Telefone: </strong> {{contato?.telefone}}</p>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <p class="subheading-2"><strong>Mensagem</strong> {{contato?.mensagem}}</p>
+        </mat-list-item>
+    </mat-list>
+  </div>
+    <button mat-raised-button color="primary" class="voltar" (click)="voltar()">Voltar</button>
+</div>
