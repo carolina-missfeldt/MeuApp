@@ -32,7 +32,7 @@ export class CadastroComponent implements OnInit {
       telefone: ['', [
         Validators.required,
         Validators.minLength(10),
-        Validators.maxLength(11),
+        Validators.maxLength(15),
         Validators.pattern('^(([1-9]*)|(([1-9]*)\.([0-9]*)))$')] ],
       mensagem: ['', [Validators.required, Validators.minLength(5)]]
     });

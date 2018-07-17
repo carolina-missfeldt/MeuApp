@@ -19,6 +19,7 @@ import { TabelaService } from './pages/tabela/tabela.service';
 import { AlertService } from './resources/alert.service';
 import { CadastroService } from './pages/contato/cadastro/cadastro.service';
 import { CadastradoComponent } from './pages/contato/cadastrado/cadastrado.component';
+import { FormatoTelefonePipe } from './resources/formato-telefone.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CadastradoComponent } from './pages/contato/cadastrado/cadastrado.compo
     TabelaComponent,
     MenuComponent,
     ContatoComponent,
-    CadastradoComponent
+    CadastradoComponent,
+    FormatoTelefonePipe
   ],
   imports: [
     BrowserModule,
